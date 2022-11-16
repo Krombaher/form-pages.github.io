@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (error === 0) {
             postForm();
             alert('From sent!')
-
         } else {
             alert('Form entered incorrectly...');
         }

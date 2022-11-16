@@ -7,45 +7,70 @@ body {
   justify-content: center;
 }
 
-.container {
-  margin-top: 150px;
-  border: 3px solid white;
-  padding: 4px;
-  position: relative;
+.row {
+  display: flex;
+  margin-top: 50px;
   transform: skewX(-30deg);
+  padding: 3px;
+  border: 2px solid white;
 
-  @media (max-width: 425px) {
+  @media (max-width: 470px) {
     transform: skewX(0deg);
   }
 }
 
-.row {
-  display: flex;
-}
-
 .field__input {
-  width: calc(100% - 10px);
-  position: relative;
+  background-color: grey;
+  opacity: 70%;
+  padding: 10px;
   margin-right: 5px;
-}
+  position: relative;
+  z-index: 1;
 
-.input {
-  border: none;
-  line-height: 40px;
-  outline: none;
-  padding-left: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 16px;
-  opacity: 50%;
+  input {
+    transform: skewX(30deg);
+    border: none;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: inherit;
+    color: #2d2d2d;
+
+    @media (max-width: 470px) {
+      transform: skewX(0deg);
+    }
+  }
 }
 
 .input::placeholder {
   color: #2d2d2d;
+}
+
+.field__input small {
   transform: skewX(30deg);
-  @media (max-width: 425px) {
+  visibility: hidden;
+  position: absolute;
+  font-size: 18px;
+  top: 50px;
+  left: 0;
+
+  @media (max-width: 470px) {
     transform: skewX(0deg);
   }
+}
+
+.field__input.error small {
+  visibility: visible;
+  color: #ef0808;
+}
+
+.field__input.error input {
+  color: #ef0808;
+}
+
+.field__input.error input::placeholder {
+  color: #ef0808;
 }
 
 .field--button {
@@ -59,7 +84,7 @@ body {
       font-size: 16px;
       margin: 0;
       transform: skewX(30deg);
-      @media (max-width: 425px) {
+      @media (max-width: 470px) {
         transform: skewX(0deg);
       }
     }
@@ -68,7 +93,7 @@ body {
       display: block;
       margin-left: 30px;
       transform: skewX(30deg);
-      @media (max-width: 425px) {
+      @media (max-width: 470px) {
         transform: skewX(0deg);
       }
     }
@@ -80,36 +105,9 @@ body {
   color: #ffffff;
   border: none;
   outline: none;
-  line-height: 40px;
+  line-height: 42px;
   font-size: 16px;
   width: 100%;
   padding: 0 10px 0 10px;
   text-transform: uppercase;
-  transform: skewX(0deg);
-}
-
-.field__input small {
-  transform: skewX(30deg);
-  visibility: hidden;
-  position: absolute;
-  font-size: 18px;
-  top: 50px;
-  left: 0;
-
-  @media (max-width: 425px) {
-    transform: skewX(0deg);
-  }
-}
-
-.field__input.error small {
-  visibility: visible;
-  color: #de2c2c;
-}
-
-.field__input.error input {
-  color: #de2c2c;
-}
-
-.field__input.error input::placeholder {
-  color: #de2c2c;
 }
